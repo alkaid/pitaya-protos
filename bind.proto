@@ -7,4 +7,11 @@ option go_package = "../protos";
 message BindMsg {
   string uid = 1;
   string fid = 2;
+  int64 sid = 3;  //frontend session id
+}
+
+message BindBackendMsg {
+  string uid = 1;
+  string btype = 2; //backend server type
+  string bid = 3; //backend server id
 }
