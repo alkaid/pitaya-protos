@@ -2,13 +2,13 @@ syntax = "proto3";
 
 package protos;
 option csharp_namespace = "NPitaya.Protos";
-option go_package = "../protos";
+option go_package = "./protos";
 
-import "request.proto";
-import "response.proto";
-import "push.proto";
-import "bind.proto";
-import "kick.proto";
+import "pitaya-protos/request.proto";
+import "pitaya-protos/response.proto";
+import "pitaya-protos/push.proto";
+import "pitaya-protos/bind.proto";
+import "pitaya-protos/kick.proto";
 
 service Pitaya {
   rpc Call(Request) returns (Response) {}
