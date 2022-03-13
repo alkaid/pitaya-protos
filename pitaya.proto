@@ -13,6 +13,7 @@ import "pitaya-protos/kick.proto";
 service Pitaya {
   rpc Call(Request) returns (Response) {}
   rpc PushToUser(Push) returns (Response) {}
+  // Deprecated:上层的bind广播方法已弃用改为Fork实现,所以此处的响应也不再需要了
   rpc SessionBindRemote(BindMsg) returns (Response) {}
   rpc KickUser(KickMsg) returns (KickAnswer) {}
 }

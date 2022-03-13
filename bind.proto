@@ -3,15 +3,19 @@ syntax = "proto3";
 package protos;
 option csharp_namespace = "NPitaya.Protos";
 option go_package = "./protos";
+import "pitaya-protos/session.proto";
 
 message BindMsg {
   string uid = 1;
   string fid = 2;
-  int64 sid = 3;  //frontend session id
+  int64 sid = 3; // frontend session id
+  Session session = 4;
+  map<string, string> metadata = 5; // 用户调用Bind()时的透传数据
 }
 
 message BindBackendMsg {
   string uid = 1;
-  string btype = 2; //backend server type
-  string bid = 3; //backend server id
+  string btype = 2;                 // backend server type
+  string bid = 3;                   // backend server id
+  map<string, string> metadata = 4; // 用户调用BindBackend()时的透传数据
 }
