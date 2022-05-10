@@ -1,11 +1,17 @@
 syntax = "proto3";
 
 package protos;
-option csharp_namespace = "NPitaya.Protos";
-option go_package = "./protos";
+import "pitaya-protos/errors/errors.proto";
 
-message Error {
-  string code = 1;
-  string msg = 2;
-  map<string, string> metadata = 3;
+option go_package = "./protos;protos";
+
+enum PitayaError {
+  // 设置缺省错误码
+  option (errors.default_code) = 500;
+  ErrUnknown = 0;
+  // 禁止该session请求此服务器(session未绑定)
+  ErrForbiddenServerOfSession = 1 [
+    (errors.code) = 403,
+    (errors.message) = "禁止该session请求此服务器,session未绑定"
+  ];
 }
