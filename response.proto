@@ -5,7 +5,7 @@ option csharp_namespace = "NPitaya.Protos";
 option go_package = "./protos";
 
 // import "pitaya-protos/error.proto";
-import "pitaya-protos/errors/errors.proto";
+import "errors.proto";
 
 message Response {
   bytes data = 1;

@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package protos;
-import "pitaya-protos/errors/errors.proto";
+import "errors.proto";
 
 option go_package = "./protos;protos";
 

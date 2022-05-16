@@ -4,19 +4,15 @@ package protos;
 option csharp_namespace = "NPitaya.Protos";
 option go_package = "./protos";
 
-// Descriptor proto used to retrieve zipped proto descriptors remotely
-message ProtoDescriptor {
-    bytes desc = 1;
-}
+import "google/protobuf/descriptor.proto";
 
-message ProtoName {
-    string name = 1;
-}
+// Descriptor proto used to retrieve zipped proto descriptors remotely
+// message ProtoDescriptor { bytes desc = 1; }
+//
+// message ProtoName { string name = 1; }
 
 message ProtoDescriptors {
-    repeated bytes desc = 1;
+  repeated google.protobuf.FileDescriptorProto desc = 1;
 }
 
-message ProtoNames {
-    repeated string name = 1;
-}
+message ProtoNames { repeated string name = 1; }
