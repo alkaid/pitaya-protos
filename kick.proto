@@ -6,7 +6,8 @@ option go_package = "./protos";
 
 message KickMsg {
   string userId = 1;
-  map<string, string> metadata = 2; // 用户调用Kic()时的透传数据
+  int32 reason = 2;
+  map<string, string> metadata = 3; // 用户调用Kick()时的透传数据
 }
 
 message KickAnswer { bool kicked = 1; }
