@@ -12,6 +12,13 @@ enum PitayaError {
   // 禁止该session请求此服务器(session未绑定)
   ErrForbiddenServerOfSession = 1 [
     (errors.code) = 403,
-    (errors.message) = "禁止该session请求此服务器,session未绑定"
+    (errors.message) =
+        "forbidden this session request the server,because session unbound",
+    (errors.pretty) = "err_pitaya_forbidden_server_of_session"
+  ];
+  ErrSessionNotFound = 2 [
+    (errors.code) = 400,
+    (errors.message) = "session not found",
+    (errors.pretty) = "err_pitaya_session_not_found"
   ];
 }
