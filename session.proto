@@ -5,8 +5,9 @@ option csharp_namespace = "NPitaya.Protos";
 option go_package = "./protos";
 
 message Session {
-  int64 id = 1;
+  int64 id = 1; // session在frontend的id
   string uid = 2;
   bytes data = 3;
+  map<string, string> backends = 4;
+  string ip = 5;
 }
-
